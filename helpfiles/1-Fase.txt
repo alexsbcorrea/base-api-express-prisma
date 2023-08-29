@@ -1,0 +1,68 @@
+1 - Crie uma nova pasta e inicialize o projeto:
+## npm init -y
+
+2 - Instale o Typescript e dependências relacionadas.
+## npm i --save-dev typescript ts-node @types/node
+## npm i --save-dev nodemon
+
+3 - Inicialize a configuração do Typescript.
+## npx tsc --init
+
+4 - Se necessário ajuste o tsconfig.json conforme o exemplo abaixo:
+
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "resolveJsonModule": true
+  }
+}
+
+5 - Configure os scripts do Package.json conforme exemplo abaixo:
+
+"scripts": {
+  "start:dev": "nodemon ./index.ts",
+  "start": "tsc && node ./dist/index.js"
+},
+
+6 - Instale as dependências básicas da API
+DEP
+npm i dotenv express cors jsonwebtoken swagger-ui-express @prisma/client helmet
+
+DEV-DEP
+npm i --save-dev @types/express @types/cors @types/jsonwebtoken @types/swagger-ui-express prisma @types/helmet
+
+npm i --save express
+npm i --save-dev @types/express
+
+npm i --save cors
+npm i --save-dev @types/cors
+
+npm i --save jsonwebtoken
+npm i --save-dev @types/jsonwebtoken
+
+npm i --save swagger-ui-express
+npm i --save-dev @types/swagger-ui-express
+
+npm i --save @prisma/client
+npm i --save-dev prisma
+
+npm i helmet
+npm i --save-dev @types/helmet
+
+7 - Inicialize o Prisma e configure as opções para conectar com a DataBase.
+## npx prisma init
+
+8 - Configure a URL de conexão e em seguida as Models
+
+9 - Rode o comando de Migration para carregar as Models no Banco de Dados
+## npx prisma migrate dev --name init - Será criado o banco e as tabelas
+## npx prisma db pull - Conecta com o Banco definido no .ENV e cria um arquivo com base no que está lá
+## npx prisma db push - Conecta com o Banco e cria somente as tabelas.

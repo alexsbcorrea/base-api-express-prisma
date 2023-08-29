@@ -1,0 +1,36 @@
+
+
+1 - Dentro da raiz, crie a pasta src e após isso a seguinte estrutura de pastas.
+
+src
+--@types
+--db
+--entities
+----User
+------UserEntity
+------DTOs
+--controllers
+--services
+--repositories
+--middlewares
+--routes
+--helpers
+--utils
+
+Obs: Dentro da pasta @types crie um arquivo chamado express.d.ts.
+
+declare namespace Express {
+  interface Request {
+    userID: Number;
+  }
+}
+
+2 - Configure o PrismaClient na pasta db.
+
+import { PrismaClient } from "@prisma/client";
+
+const prismaClient = new PrismaClient();
+
+export default prismaClient;
+
+3 - Crie as Models e rode as Migrations.
