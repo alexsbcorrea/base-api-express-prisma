@@ -1,18 +1,11 @@
-import { IGetUserService } from "./interfaces";
+import * as I from "../../../entities/User/DTOs";
+import { IFindUserService } from "./interfaces";
 import { IUserRepository } from "../../../entities/User/Interfaces";
-import {
-  CreateUser,
-  GetUser,
-  byEmail,
-  byID,
-  UpdateUser,
-  User,
-  httpResponse,
-} from "../../../entities/User/DTOs";
 
-export class GetUserService implements IGetUserService {
+export class FindUserService implements IFindUserService {
   constructor(private readonly repository: IUserRepository) {}
-  async get(id: byID): Promise<httpResponse> {
+
+  async get(id: I.byID): Promise<I.httpResponse> {
     if (!id) {
       return {
         statusCode: 422,
@@ -20,7 +13,7 @@ export class GetUserService implements IGetUserService {
       };
     }
 
-    const user = await this.repository.get(id);
+    const user = await this.repository.findUser(id);
 
     if (!user) {
       return {

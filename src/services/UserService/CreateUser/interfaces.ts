@@ -1,13 +1,5 @@
-import {
-  User,
-  CreateUser,
-  UpdateUser,
-  GetUser,
-  byID,
-  byEmail,
-  httpResponse,
-} from "../../../entities/User/DTOs";
+import * as I from "../../../entities/User/DTOs";
 
 export interface ICreateUserService {
-  create(data: Partial<User>): Promise<httpResponse>;
+  create(data: Partial<I.User>): Promise<I.httpResponse>;
 }

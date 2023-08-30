@@ -4,6 +4,6 @@ import { CreateUserController } from ".";
 
 const repository = new UserRepository();
 const service = new CreateUserService(repository);
-const controller = new CreateUserController(service, repository);
+const controller = new CreateUserController(service);
 
 export default controller;

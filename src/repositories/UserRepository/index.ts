@@ -1,16 +1,9 @@
-import {
-  User,
-  CreateUser,
-  UpdateUser,
-  GetUser,
-  byID,
-} from "../../entities/User/DTOs";
+import * as I from "../../entities/User/DTOs";
 import { IUserRepository } from "../../entities/User/Interfaces";
-
 import { prismaClient } from "../../db/prismaClient";
 
 export class UserRepository implements IUserRepository {
-  async create(data: CreateUser): Promise<string | undefined> {
+  async create(data: I.CreateUser): Promise<string | undefined> {
     try {
       const user = await prismaClient.user.create({
         data: data,
@@ -21,7 +14,7 @@ export class UserRepository implements IUserRepository {
       return undefined;
     }
   }
-  async get(id: byID): Promise<GetUser | undefined> {
+  async findUser(id: I.byID): Promise<I.GetUser | undefined> {
     const user = await prismaClient.user.findFirst({
       where: { id: String(id) },
     });
@@ -31,10 +24,7 @@ export class UserRepository implements IUserRepository {
     }
     return user;
   }
-  async update(
-    id: byID,
-    data: Partial<UpdateUser>
-  ): Promise<string | undefined> {
+  async update(id: I.byID, data: Partial<I.UpdateUser>): Promise<string | undefined> {
     try {
       const user = await prismaClient.user.update({
         data: data,
@@ -46,7 +36,7 @@ export class UserRepository implements IUserRepository {
       return undefined;
     }
   }
-  async delete(id: byID): Promise<string | undefined> {
+  async delete(id: I.byID): Promise<string | undefined> {
     try {
       const user = await prismaClient.user.delete({
         where: { id: String(id) },
@@ -57,7 +47,7 @@ export class UserRepository implements IUserRepository {
       return undefined;
     }
   }
-  async getall(): Promise<GetUser[] | []> {
+  async findAll(): Promise<I.GetUser[] | []> {
     const users = await prismaClient.user.findMany();
 
     if (!users) {
@@ -65,7 +55,7 @@ export class UserRepository implements IUserRepository {
     }
     return users;
   }
-  async getByEmail(email: string): Promise<GetUser | undefined> {
+  async findByEmail(email: string): Promise<I.GetUser | undefined> {
     const user = await prismaClient.user.findFirst({
       where: { email: email },
     });

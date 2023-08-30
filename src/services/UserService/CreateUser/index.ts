@@ -1,17 +1,12 @@
-import {
-  User,
-  CreateUser,
-  UpdateUser,
-  GetUser,
-  httpResponse,
-} from "../../../entities/User/DTOs";
-import { UserEntity } from "../../../entities/User/UserEntity";
+import * as I from "../../../entities/User/DTOs";
 import { ICreateUserService } from "./interfaces";
 import { IUserRepository } from "../../../entities/User/Interfaces";
+import { UserEntity } from "../../../entities/User/UserEntity";
 
 export class CreateUserService implements ICreateUserService {
   constructor(private readonly repository: IUserRepository) {}
-  async create(data: Partial<User>): Promise<httpResponse> {
+
+  async create(data: Partial<I.User>): Promise<I.httpResponse> {
     if (!data.name) {
       return {
         statusCode: 422,
@@ -47,7 +42,7 @@ export class CreateUserService implements ICreateUserService {
       };
     }
 
-    const checkUser = await this.repository.getByEmail(data.email);
+    const checkUser = await this.repository.findByEmail(data.email);
 
     if (checkUser) {
       return {
