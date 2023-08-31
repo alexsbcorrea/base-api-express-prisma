@@ -1,0 +1,20 @@
+1 - Instale o TS Jest.
+## npm install --save-dev jest @types/jest
+
+Caso esteja utilizando Typescript acione também:
+## npm install --save-dev ts-jest
+
+Habilite o preset e mude de undefined para 'ts-jest'
+preset: "ts-jest",
+
+2 - Inicialize o Jest.
+## npx jest --init
+
+Obs: Será gerado o arquivo jest.config.json
+
+3 - Ative a opção testMatch.
+----Configuração Padrão (Todos os testes em __testes___)
+testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"]
+
+----Configuração para Todas as Pastas
+testMatch: ['**/*.spec.ts']
