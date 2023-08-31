@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import CreateUser from "../controllers/UserController/CreateUser/instance";
-import FindUser from "../controllers/UserController/FindUser/instance";
-import FindAll from "../controllers/UserController/FindAll/instance";
-import UpdateUser from "../controllers/UserController/UpdateUser/instance";
-import DeleteUser from "../controllers/UserController/DeleteUser/instance";
+import CreateUser from "../modules/User/CreateUser/CreateUserFactory";
+import FindUser from "../modules/User/FindUser/FindUserFactory";
+import FindAll from "../modules/User/FindAllUser/FindAllUserFactory";
+import UpdateUser from "../modules/User/UpdateUser/UpdateUserFactory";
+import DeleteUser from "../modules/User/DeleteUser/DeleteUserFactory";
 
 import TokenValidation from "../middlewares/Token/TokenValidation";
 
@@ -16,7 +16,7 @@ route.post("/", async (req, res) => {
 route.get("/:id", async (req, res) => {
   await FindUser.findUser(req, res);
 });
-route.get("/", TokenValidation.execute, async (req, res) => {
+route.get("/", async (req, res) => {
   await FindAll.findAll(req, res);
 });
 route.patch("/:id", async (req, res) => {
