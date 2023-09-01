@@ -12,11 +12,18 @@ export class DeleteUserService implements IDeleteUserService {
         statusCode: 500,
         body: "Erro interno, tente novamente mais tarde.",
       };
-    } else {
+    }
+
+    if (user == "NOT_FOUND") {
       return {
-        statusCode: 200,
-        body: "Usuário excluído com sucesso.",
+        statusCode: 404,
+        body: "Usuário não encontrado.",
       };
     }
+
+    return {
+      statusCode: 200,
+      body: "Usuário excluído com sucesso.",
+    };
   }
 }

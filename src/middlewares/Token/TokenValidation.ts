@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 import { JWTDecode } from "./Interfaces";
 
-const secret = process.env.SECRET || "teste";
+const secret = process.env.JWT_TOKEN_SECRET || "teste";
 
 export default class TokenValidation {
   static async execute(req: Request, res: Response, next: NextFunction) {

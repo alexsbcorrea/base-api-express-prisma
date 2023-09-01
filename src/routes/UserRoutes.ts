@@ -14,7 +14,7 @@ route.post("/", async (req, res) => {
   await CreateUser.create(req, res);
 });
 route.get("/:id", async (req, res) => {
-  await FindUser.findUser(req, res);
+  await FindUser.find(req, res);
 });
 route.get("/", async (req, res) => {
   await FindAll.findAll(req, res);

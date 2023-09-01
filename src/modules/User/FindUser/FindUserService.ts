@@ -5,7 +5,7 @@ import { IUserRepository } from "../../../repositories/UserRepository/Prisma/int
 export class FindUserService implements IFindUserService {
   constructor(private readonly repository: IUserRepository) {}
 
-  async get(id: I.byID): Promise<I.httpResponse> {
+  async find(id: I.byID): Promise<I.httpResponse> {
     if (!id) {
       return {
         statusCode: 422,

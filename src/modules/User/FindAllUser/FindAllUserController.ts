@@ -1,5 +1,6 @@
 import { IFindAllUserController } from "./InterfaceFindAllUserController";
 import { IFindAllUserService } from "./InterfaceFindAllUserService";
+import * as I from "../../../entities/User/DTOs";
 
 export class FindAllUserController implements IFindAllUserController {
   constructor(private readonly service: IFindAllUserService) {}

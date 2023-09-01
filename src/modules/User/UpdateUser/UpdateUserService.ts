@@ -6,6 +6,12 @@ export class UpdateUserService implements IUpdateUserService {
   constructor(private readonly repository: IUserRepository) {}
 
   async update(id: I.byID, data: Partial<I.User>): Promise<I.httpResponse> {
+    if (!id) {
+      return {
+        statusCode: 422,
+        body: "O ID é obrigatório.",
+      };
+    }
     if (!data.name) {
       return {
         statusCode: 422,
@@ -73,6 +79,14 @@ export class UpdateUserService implements IUpdateUserService {
           body: "Erro interno. Tente novamente mais tarde.",
         };
       }
+
+      if (user == "NOT_FOUND") {
+        return {
+          statusCode: 404,
+          body: "Usuário não encontrado.",
+        };
+      }
+
       return {
         statusCode: 200,
         body: "Usuário atualizado com sucesso.",

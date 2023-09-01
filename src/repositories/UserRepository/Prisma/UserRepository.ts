@@ -25,6 +25,10 @@ export class UserRepository implements IUserRepository {
     return user;
   }
   async update(id: I.byID, data: Partial<I.UpdateUser>): Promise<string | undefined> {
+    const checkUser = await prismaClient.user.findFirst({ where: { id } });
+    if (!checkUser) {
+      return "NOT_FOUND";
+    }
     try {
       const user = await prismaClient.user.update({
         data: data,
@@ -37,6 +41,10 @@ export class UserRepository implements IUserRepository {
     }
   }
   async delete(id: I.byID): Promise<string | undefined> {
+    const checkUser = await prismaClient.user.findFirst({ where: { id } });
+    if (!checkUser) {
+      return "NOT_FOUND";
+    }
     try {
       const user = await prismaClient.user.delete({
         where: { id: String(id) },

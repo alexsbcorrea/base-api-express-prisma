@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 
-const secret = process.env.SECRET || "teste";
+const secret = process.env.JWT_TOKEN_SECRET || "teste";
 
 export default class GenerateToken {
   static async execute(req: Request, res: Response) {

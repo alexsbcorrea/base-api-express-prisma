@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export interface User {
   id: string;
   name: string;
@@ -25,13 +27,9 @@ export interface GetUser {
   password: string;
 }
 
-export interface byID {
-  id: string;
-}
+export type byID = string;
 
-export interface byEmail {
-  email: string;
-}
+export type byEmail = string;
 
 export interface httpResponse {
   statusCode: number;

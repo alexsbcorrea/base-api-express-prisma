@@ -1,12 +1,12 @@
 import { CreateUserController } from "./CreateUserController";
 import { CreateUserService } from "./CreateUserService";
-import { UserRepository } from "../../../repositories/UserRepository/Prisma/UserRepository";
+import { MockUserRepository } from "../../../repositories/UserRepository/Prisma/MockUserRepository";
 
 describe("CreateUser-Service", () => {
   beforeAll(() => {});
 
-  test("Payload empty", async () => {
-    const repository = new UserRepository();
+  test("REQ > REQ.BODY empty", async () => {
+    const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
@@ -21,8 +21,8 @@ describe("CreateUser-Service", () => {
     expect(result.statusCode).toEqual(422);
   });
 
-  test("Payload only name", async () => {
-    const repository = new UserRepository();
+  test("REQ > REQ.BODY only name", async () => {
+    const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
@@ -37,8 +37,8 @@ describe("CreateUser-Service", () => {
     expect(result.statusCode).toEqual(422);
   });
 
-  test("Payload with name e email", async () => {
-    const repository = new UserRepository();
+  test("REQ > REQ.BODY with name e email", async () => {
+    const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
@@ -53,8 +53,8 @@ describe("CreateUser-Service", () => {
     expect(result.statusCode).toEqual(422);
   });
 
-  test("Payload with name, email, password", async () => {
-    const repository = new UserRepository();
+  test("REQ > REQ.BODY with name, email, password", async () => {
+    const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
@@ -69,8 +69,8 @@ describe("CreateUser-Service", () => {
     expect(result.statusCode).toEqual(422);
   });
 
-  test("Payload with name, email, password, confirmPassword (confirmPassword different)", async () => {
-    const repository = new UserRepository();
+  test("REQ > REQ.BODY with name, email, password, confirmPassword (confirmPassword different)", async () => {
+    const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
@@ -85,8 +85,8 @@ describe("CreateUser-Service", () => {
     expect(result.statusCode).toEqual(422);
   });
 
-  test("Payload with name, email, password, confirmPassword (confirmPassword equal)", async () => {
-    const repository = new UserRepository();
+  test("REQ > REQ.BODY with name, email, password, confirmPassword (confirmPassword equal)", async () => {
+    const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
@@ -101,8 +101,8 @@ describe("CreateUser-Service", () => {
     expect(result.statusCode).toEqual(201);
   });
 
-  test("Payload full, email exist", async () => {
-    const repository = new UserRepository();
+  test("REQ > REQ.BODY full, email exist", async () => {
+    const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
