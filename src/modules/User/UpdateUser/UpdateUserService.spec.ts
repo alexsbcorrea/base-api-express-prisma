@@ -15,7 +15,12 @@ describe("Update-User-Controller", () => {
     const controller = new CreateUserController(service);
 
     const req = {
-      body: { name: "Alan", email: "alan.mullert@test.com", password: "123456789", confirmPassword: "123456789" },
+      body: {
+        name: "Alan",
+        email: "alan.mullert@test.com",
+        password: "123456789",
+        confirmPassword: "123456789",
+      },
       params: {},
     };
 
@@ -51,7 +56,12 @@ describe("Update-User-Controller", () => {
     const controller = new UpdateUserController(service);
 
     const req = {
-      body: { name: "AlanS", email: "alans.mullert@test.com", password: "S123456789", confirmPassword: "S123456789" },
+      body: {
+        name: "AlanS",
+        email: "alans.mullert@test.com",
+        password: "S123456789",
+        confirmPassword: "S123456789",
+      },
       params: {
         id: "",
       },
@@ -108,7 +118,11 @@ describe("Update-User-Controller", () => {
     const controller = new UpdateUserController(service);
 
     const req = {
-      body: { name: "AlanS", email: "alans.mullert@test.com", password: "S123456789" },
+      body: {
+        name: "AlanS",
+        email: "alans.mullert@test.com",
+        password: "S123456789",
+      },
       params: {
         id: "9d7ccde4-45b2-4ccf-93fd-3a16eb0866a1",
       },
@@ -127,7 +141,12 @@ describe("Update-User-Controller", () => {
     const controller = new UpdateUserController(service);
 
     const req = {
-      body: { name: "AlanS", email: "alans.mullert@test.com", password: "S123456789", confirmPassword: "R123456789" },
+      body: {
+        name: "AlanS",
+        email: "alans.mullert@test.com",
+        password: "S123456789",
+        confirmPassword: "R123456789",
+      },
       params: {
         id: "9d7ccde4-45b2-4ccf-93fd-3a16eb0866a1",
       },
@@ -146,7 +165,12 @@ describe("Update-User-Controller", () => {
     const controller = new UpdateUserController(service);
 
     const req = {
-      body: { name: "AlanS", email: "alans.mullert@test.com", password: "S123456789", confirmPassword: "S123456789" },
+      body: {
+        name: "AlanS",
+        email: "alans.mullert@test.com",
+        password: "S123456789",
+        confirmPassword: "S123456789",
+      },
       params: {
         id: "8d8ccde4-45b2-4ccf-93fd-3a16eb0866a1",
       },
@@ -172,10 +196,14 @@ describe("Update-User-Controller", () => {
     const checkUser = await findService.find(userId);
 
     const currentPassword = checkUser.body.password;
-    console.log(currentPassword);
 
     const req = {
-      body: { name: "Alan T.", email: "alan.t@test.com1", password: currentPassword, confirmPassword: currentPassword },
+      body: {
+        name: "Alan T.",
+        email: "alan.t@test.com1",
+        password: currentPassword,
+        confirmPassword: currentPassword,
+      },
       params: {
         id: "9d7ccde4-45b2-4ccf-93fd-3a16eb0866a1",
       },
@@ -194,7 +222,12 @@ describe("Update-User-Controller", () => {
     const controller = new UpdateUserController(service);
 
     const req = {
-      body: { name: "Alan S.", email: "alans.s@test.com", password: "S123456789", confirmPassword: "S123456789" },
+      body: {
+        name: "Alan S.",
+        email: "alans.s@test.com",
+        password: "S123456789",
+        confirmPassword: "S123456789",
+      },
       params: {
         id: "9d7ccde4-45b2-4ccf-93fd-3a16eb0866a1",
       },

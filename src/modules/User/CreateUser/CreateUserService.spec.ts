@@ -2,113 +2,143 @@ import { CreateUserController } from "./CreateUserController";
 import { CreateUserService } from "./CreateUserService";
 import { MockUserRepository } from "../../../repositories/UserRepository/Prisma/MockUserRepository";
 
-describe("CreateUser-Service", () => {
+describe("Create-User-Service", () => {
   beforeAll(() => {});
 
-  test("REQ.BODY empty", async () => {
+  test("Deve retornar erro, sem dados para Cadastrar.", async () => {
     const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = {};
+    const req = {
+      body: {},
+      params: {},
+    };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(422);
   });
 
-  test("REQ.BODY only name", async () => {
+  test("Deve retornar erro, somente Nome.", async () => {
     const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = {
-      name: "Alan",
+    const req = {
+      body: { name: "Alan" },
+      params: {},
     };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(422);
   });
 
-  test("REQ.BODY with name e email", async () => {
+  test("Deve retornar erro, somente Nome e Email.", async () => {
     const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = {
-      name: "Alan",
-      email: "alan.folk@test.com",
+    const req = {
+      body: { name: "Alan", email: "alan.mullert@test.com" },
+      params: {},
     };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(422);
   });
 
-  test("REQ.BODY with name, email, password", async () => {
+  test("Deve retornar erro, Nome, Email e Senha.", async () => {
     const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = {
-      name: "Alan",
-      email: "alan.folk@test.com",
-      password: "123456789",
+    const req = {
+      body: {
+        name: "Alan",
+        email: "alan.mullert@test.com",
+        password: "123456789",
+      },
+      params: {},
     };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(422);
   });
 
-  test("REQ.BODY with name, email, password, confirmPassword (confirmPassword different)", async () => {
+  test("Deve retornar erro, Nome, Email, Senha e Confirmação (Divergente).", async () => {
     const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = {
-      name: "Alan",
-      email: "alan.folk@test.com",
-      password: "123456789",
-      confirmPassword: "12345678",
+    const req = {
+      body: {
+        name: "Alan",
+        email: "alan.mullert@test.com",
+        password: "123456789",
+        confirmPassword: "12345678",
+      },
+      params: {},
     };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(422);
   });
 
-  test("REQ.BODY with name, email, password, confirmPassword (confirmPassword equal)", async () => {
+  test("Deve cadastrar o usuário no Banco de Dados.", async () => {
     const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = {
-      name: "Alan",
-      email: "alan.folk@test.com",
-      password: "123456789",
-      confirmPassword: "123456789",
+    const req = {
+      body: {
+        name: "Alan",
+        email: "alan.mullert@test.com",
+        password: "123456789",
+        confirmPassword: "123456789",
+      },
+      params: {},
     };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(201);
   });
 
-  test("REQ.BODY full, email exist", async () => {
+  test("Deve retornar erro, Email já cadastrado no Banco de Dados.", async () => {
     const repository = new MockUserRepository();
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = {
-      name: "Alan",
-      email: "alan.folk@test.com",
-      password: "123456789",
-      confirmPassword: "123456789",
+    const req = {
+      body: {
+        name: "Alan",
+        email: "alan.mullert@test.com",
+        password: "123456789",
+        confirmPassword: "123456789",
+      },
+      params: {},
     };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(422);
   });

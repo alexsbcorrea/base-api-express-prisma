@@ -8,6 +8,13 @@ export class FindAllUserService implements IFindAllUserService {
   async findAll(): Promise<I.httpResponse> {
     const users = await this.repository.findAll();
 
+    if (users.length == 0) {
+      return {
+        statusCode: 404,
+        body: users,
+      };
+    }
+
     return {
       statusCode: 200,
       body: users,

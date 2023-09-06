@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for modules/User/DeleteUser/DeleteUserController.ts</title>
+    <title>Code coverage report for modules/User/FindAllUser/FindAllUserController.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">modules/User/DeleteUser</a> DeleteUserController.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">modules/User/FindAllUser</a> FindAllUserController.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">81.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/19</span>
+                <span class='fraction'>13/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">81.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/19</span>
+                <span class='fraction'>13/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -79,11 +79,7 @@
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -93,30 +89,25 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IDeleteUserController } from "./InterfaceDeleteUserController";
-import { IDeleteUserService } from "./InterfaceDeleteUserService";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IFindAllUserController } from "./InterfaceFindAllUserController";
+import { IFindAllUserService } from "./InterfaceFindAllUserService";
 import * as I from "../../../entities/User/DTOs";
 &nbsp;
-export class DeleteUserController implements IDeleteUserController {
-  constructor(private readonly service: IDeleteUserService) {}
-&nbsp;
-  async <span class="fstat-no" title="function not covered" >delete(req: any, res: any): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const { id } = req.params;</span>
-<span class="cstat-no" title="statement not covered" >    const result = await this.service.delete(id);</span>
+export class FindAllUserController implements IFindAllUserController {
+  constructor(private readonly service: IFindAllUserService) {}
+  async <span class="fstat-no" title="function not covered" >findAll(req: any, res: any): Promise&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const result = await this.service.findAll();</span>
 <span class="cstat-no" title="statement not covered" >    res.status(result.statusCode).json(result.body);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  async deleteMock(req: any, res: any): Promise&lt;I.httpResponse&gt; {
-    const { id } = req.params;
-    const result = await this.service.delete(id);
+  async findAllMock(req: any, res: any): Promise&lt;I.httpResponse&gt; {
+    const result = await this.service.findAll();
     return result;
   }
 }

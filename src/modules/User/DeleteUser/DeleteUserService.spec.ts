@@ -12,9 +12,19 @@ describe("Delete-User-Controller", () => {
     const service = new CreateUserService(repository);
     const controller = new CreateUserController(service);
 
-    const body = { name: "Alan", email: "alan.mullert@test.com", password: "123456789", confirmPassword: "123456789" };
+    const req = {
+      body: {
+        name: "Alan",
+        email: "alan.mullert@test.com",
+        password: "123456789",
+        confirmPassword: "123456789",
+      },
+      params: {},
+    };
 
-    const result = await service.create(body);
+    const res = {};
+
+    const result = await service.create(req.body);
 
     expect(result.statusCode).toEqual(201);
   });
@@ -24,9 +34,16 @@ describe("Delete-User-Controller", () => {
     const service = new DeleteUserService(repository);
     const controller = new DeleteUserController(service);
 
-    const id = "9d7ccde4-45b2-4ccf-93fd-3a16eb0866a1";
+    const req = {
+      body: {},
+      params: {
+        id: "9d7ccde4-45b2-4ccf-93fd-3a16eb0866a1",
+      },
+    };
 
-    const result = await service.delete(id);
+    const res = {};
+
+    const result = await service.delete(req.params.id);
 
     expect(result.statusCode).toEqual(200);
   });
@@ -36,9 +53,16 @@ describe("Delete-User-Controller", () => {
     const service = new DeleteUserService(repository);
     const controller = new DeleteUserController(service);
 
-    const id = "8d8ccde4-45b2-4ccf-93fd-3a16eb0866a1";
+    const req = {
+      body: {},
+      params: {
+        id: "8d8ccde4-45b2-4ccf-93fd-3a16eb0866a1",
+      },
+    };
 
-    const result = await service.delete(id);
+    const res = {};
+
+    const result = await service.delete(req.params.id);
 
     expect(result.statusCode).toEqual(404);
   });

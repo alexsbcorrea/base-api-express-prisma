@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693595654127" clover="3.2.0">
-  <project timestamp="1693595654127" name="All files">
-    <metrics statements="402" coveredstatements="333" conditionals="68" coveredconditionals="61" methods="27" coveredmethods="22" elements="497" coveredelements="416" complexity="0" loc="402" ncloc="402" packages="6" files="10" classes="10"/>
+<coverage generated="1693680992360" clover="3.2.0">
+  <project timestamp="1693680992361" name="All files">
+    <metrics statements="441" coveredstatements="371" conditionals="74" coveredconditionals="67" methods="32" coveredmethods="27" elements="547" coveredelements="465" complexity="0" loc="441" ncloc="441" packages="7" files="12" classes="12"/>
     <package name="entities.User">
       <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="UserEntity.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\entities\User\UserEntity.ts">
+      <file name="UserEntity.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\entities\User\UserEntity.ts">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -15,17 +15,17 @@
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
     </package>
     <package name="modules.User.CreateUser">
       <metrics statements="95" coveredstatements="81" conditionals="18" coveredconditionals="16" methods="5" coveredmethods="4"/>
-      <file name="CreateUserController.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\CreateUser\CreateUserController.ts">
+      <file name="CreateUserController.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\CreateUser\CreateUserController.ts">
         <metrics statements="19" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -41,13 +41,13 @@
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="10" type="stmt"/>
-        <line num="16" count="10" type="stmt"/>
-        <line num="17" count="10" type="stmt"/>
-        <line num="18" count="10" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
       </file>
-      <file name="CreateUserService.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\CreateUser\CreateUserService.ts">
+      <file name="CreateUserService.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\CreateUser\CreateUserService.ts">
         <metrics statements="76" coveredstatements="66" conditionals="16" coveredconditionals="14" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -58,78 +58,78 @@
         <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="20" type="cond" truecount="0" falsecount="1"/>
+        <line num="10" count="22" type="cond" truecount="0" falsecount="1"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="16" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="22" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
         <line num="19" count="2" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
         <line num="21" count="2" type="stmt"/>
-        <line num="22" count="18" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="22" type="cond" truecount="1" falsecount="0"/>
         <line num="24" count="2" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
-        <line num="29" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="18" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="22" type="cond" truecount="1" falsecount="0"/>
         <line num="31" count="2" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
-        <line num="36" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="37" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="22" type="cond" truecount="1" falsecount="0"/>
         <line num="38" count="2" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
         <line num="41" count="2" type="stmt"/>
         <line num="42" count="2" type="stmt"/>
-        <line num="43" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="44" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="43" count="14" type="cond" truecount="1" falsecount="0"/>
+        <line num="44" count="22" type="cond" truecount="1" falsecount="0"/>
         <line num="45" count="2" type="stmt"/>
         <line num="46" count="2" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
         <line num="48" count="2" type="stmt"/>
         <line num="49" count="2" type="stmt"/>
-        <line num="50" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="51" count="10" type="stmt"/>
-        <line num="52" count="10" type="stmt"/>
-        <line num="53" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="51" count="12" type="stmt"/>
+        <line num="52" count="12" type="stmt"/>
+        <line num="53" count="22" type="cond" truecount="2" falsecount="0"/>
         <line num="54" count="2" type="stmt"/>
         <line num="55" count="2" type="stmt"/>
         <line num="56" count="2" type="stmt"/>
         <line num="57" count="2" type="stmt"/>
         <line num="58" count="2" type="stmt"/>
-        <line num="59" count="8" type="stmt"/>
-        <line num="60" count="8" type="stmt"/>
-        <line num="61" count="8" type="stmt"/>
-        <line num="62" count="8" type="stmt"/>
-        <line num="63" count="8" type="stmt"/>
-        <line num="64" count="8" type="stmt"/>
-        <line num="65" count="8" type="stmt"/>
-        <line num="66" count="8" type="stmt"/>
-        <line num="67" count="8" type="stmt"/>
-        <line num="68" count="8" type="stmt"/>
-        <line num="69" count="20" type="cond" truecount="0" falsecount="1"/>
+        <line num="59" count="10" type="stmt"/>
+        <line num="60" count="10" type="stmt"/>
+        <line num="61" count="10" type="stmt"/>
+        <line num="62" count="10" type="stmt"/>
+        <line num="63" count="10" type="stmt"/>
+        <line num="64" count="10" type="stmt"/>
+        <line num="65" count="10" type="stmt"/>
+        <line num="66" count="10" type="stmt"/>
+        <line num="67" count="10" type="stmt"/>
+        <line num="68" count="10" type="stmt"/>
+        <line num="69" count="22" type="cond" truecount="0" falsecount="1"/>
         <line num="70" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
         <line num="73" count="0" type="stmt"/>
         <line num="74" count="0" type="stmt"/>
-        <line num="75" count="20" type="stmt"/>
+        <line num="75" count="22" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
       </file>
     </package>
     <package name="modules.User.DeleteUser">
       <metrics statements="48" coveredstatements="39" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="4"/>
-      <file name="DeleteUserController.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\DeleteUser\DeleteUserController.ts">
+      <file name="DeleteUserController.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\DeleteUser\DeleteUserController.ts">
         <metrics statements="19" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -151,7 +151,7 @@
         <line num="18" count="2" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
       </file>
-      <file name="DeleteUserService.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\DeleteUser\DeleteUserService.ts">
+      <file name="DeleteUserService.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\DeleteUser\DeleteUserService.ts">
         <metrics statements="29" coveredstatements="24" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -184,9 +184,57 @@
         <line num="29" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="modules.User.FindAllUser">
+      <metrics statements="39" coveredstatements="36" conditionals="5" coveredconditionals="5" methods="5" coveredmethods="4"/>
+      <file name="FindAllUserController.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\FindAllUser\FindAllUserController.ts">
+        <metrics statements="16" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="FindAllUserService.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\FindAllUser\FindAllUserService.ts">
+        <metrics statements="23" coveredstatements="23" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="modules.User.FindUser">
       <metrics statements="48" coveredstatements="39" conditionals="7" coveredconditionals="6" methods="5" coveredmethods="4"/>
-      <file name="FindUserController.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\FindUser\FindUserController.ts">
+      <file name="FindUserController.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\FindUser\FindUserController.ts">
         <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -207,7 +255,7 @@
         <line num="17" count="2" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="FindUserService.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\FindUser\FindUserService.ts">
+      <file name="FindUserService.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\FindUser\FindUserService.ts">
         <metrics statements="30" coveredstatements="25" conditionals="5" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -243,7 +291,7 @@
     </package>
     <package name="modules.User.UpdateUser">
       <metrics statements="114" coveredstatements="80" conditionals="20" coveredconditionals="18" methods="5" coveredmethods="4"/>
-      <file name="UpdateUserController.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\UpdateUser\UpdateUserController.ts">
+      <file name="UpdateUserController.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\UpdateUser\UpdateUserController.ts">
         <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -264,7 +312,7 @@
         <line num="17" count="9" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="UpdateUserService.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\modules\User\UpdateUser\UpdateUserService.ts">
+      <file name="UpdateUserService.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\modules\User\UpdateUser\UpdateUserService.ts">
         <metrics statements="96" coveredstatements="66" conditionals="18" coveredconditionals="16" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -365,9 +413,9 @@
       </file>
     </package>
     <package name="repositories.UserRepository.Prisma">
-      <metrics statements="82" coveredstatements="79" conditionals="16" coveredconditionals="15" methods="6" coveredmethods="5"/>
-      <file name="MockUserRepository.ts" path="C:\Users\Aluno-X\Music\CLI PROJECT\api-express-prisma\src\repositories\UserRepository\Prisma\MockUserRepository.ts">
-        <metrics statements="82" coveredstatements="79" conditionals="16" coveredconditionals="15" methods="6" coveredmethods="5"/>
+      <metrics statements="82" coveredstatements="81" conditionals="17" coveredconditionals="16" methods="6" coveredmethods="6"/>
+      <file name="MockUserRepository.ts" path="C:\Users\Schwab\Documents\GitHub\base-api-express-prisma\src\repositories\UserRepository\Prisma\MockUserRepository.ts">
+        <metrics statements="82" coveredstatements="81" conditionals="17" coveredconditionals="16" methods="6" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -376,15 +424,15 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
         <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="19" count="12" type="cond" truecount="1" falsecount="0"/>
         <line num="20" count="12" type="stmt"/>
@@ -435,20 +483,20 @@
         <line num="65" count="2" type="stmt"/>
         <line num="66" count="2" type="stmt"/>
         <line num="67" count="4" type="stmt"/>
-        <line num="68" count="1" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
+        <line num="68" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="69" count="4" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
         <line num="71" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="72" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="72" count="12" type="cond" truecount="1" falsecount="0"/>
         <line num="73" count="2" type="stmt"/>
-        <line num="74" count="10" type="stmt"/>
-        <line num="75" count="10" type="stmt"/>
-        <line num="76" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="77" count="8" type="stmt"/>
-        <line num="78" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="74" count="12" type="stmt"/>
+        <line num="75" count="12" type="stmt"/>
+        <line num="76" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="77" count="10" type="stmt"/>
+        <line num="78" count="10" type="cond" truecount="1" falsecount="0"/>
         <line num="79" count="2" type="stmt"/>
         <line num="80" count="2" type="stmt"/>
-        <line num="81" count="10" type="stmt"/>
+        <line num="81" count="12" type="stmt"/>
         <line num="82" count="1" type="stmt"/>
       </file>
     </package>
