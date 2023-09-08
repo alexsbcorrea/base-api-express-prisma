@@ -3,13 +3,15 @@ import { DeleteUserService } from "./DeleteUserService";
 import { CreateUserController } from "../CreateUser/CreateUserController";
 import { CreateUserService } from "../CreateUser/CreateUserService";
 import { MockUserRepository } from "../../../repositories/UserRepository/Prisma/MockUserRepository";
+import { RedisCache } from "../../../cache/Redis/RedisCache";
 
 describe("Delete-User-Controller", () => {
   beforeAll(() => {});
 
   test("Deve criar um novo usuário no Banco de Dados", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -30,8 +32,9 @@ describe("Delete-User-Controller", () => {
   });
 
   test("Deve localizar e excluir o usuário que acabou de ser criado.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new DeleteUserService(repository);
+    const service = new DeleteUserService(repository, redis);
     const controller = new DeleteUserController(service);
 
     const req = {
@@ -49,8 +52,9 @@ describe("Delete-User-Controller", () => {
   });
 
   test("Deve retornar erro pois o ID está incorreto.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new DeleteUserService(repository);
+    const service = new DeleteUserService(repository, redis);
     const controller = new DeleteUserController(service);
 
     const req = {

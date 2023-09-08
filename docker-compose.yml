@@ -12,13 +12,16 @@ services:
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=expressprisma
     volumes:
-      - pgdata:/data/postgres
+      - pg-data:/var/lib/postgresql/data
+
     networks:
       - test-network
   redis:
     image: redis
     ports:
       - 6379:6379
+    volumes:
+      - redis-data:/data
     networks:
       - test-network
   app:
@@ -36,8 +39,11 @@ services:
     networks:
       - test-network
 volumes:
-  pgdata:
+  pg-data:
     driver: local
+  redis-data:
+    driver: local
+
 networks:
   test-network:
     driver: bridge

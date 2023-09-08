@@ -1,13 +1,15 @@
 import { CreateUserController } from "./CreateUserController";
 import { CreateUserService } from "./CreateUserService";
 import { MockUserRepository } from "../../../repositories/UserRepository/Prisma/MockUserRepository";
+import { RedisCache } from "../../../cache/Redis/RedisCache";
 
 describe("Create-User-Controller", () => {
   beforeAll(() => {});
 
   test("Deve retornar erro, sem dados para Cadastrar.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -22,8 +24,9 @@ describe("Create-User-Controller", () => {
   });
 
   test("Deve retornar erro, somente Nome.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -38,8 +41,9 @@ describe("Create-User-Controller", () => {
   });
 
   test("Deve retornar erro, somente Nome e Email.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -54,8 +58,9 @@ describe("Create-User-Controller", () => {
   });
 
   test("Deve retornar erro, Nome, Email e Senha.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -74,8 +79,9 @@ describe("Create-User-Controller", () => {
   });
 
   test("Deve retornar erro, Nome, Email, Senha e Confirmação (Divergente).", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -95,8 +101,9 @@ describe("Create-User-Controller", () => {
   });
 
   test("Deve cadastrar o usuário no Banco de Dados.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -116,8 +123,9 @@ describe("Create-User-Controller", () => {
   });
 
   test("Deve retornar erro, Email já cadastrado no Banco de Dados.", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {

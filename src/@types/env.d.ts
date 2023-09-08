@@ -6,6 +6,15 @@ declare namespace NodeJS {
     REFRESH_TOKEN_SECRET: string;
     JWT_LIFETIME: string;
     DB_URL: string;
-    DB_DIALECT: "PostgreSQL" | "MySQL" | "SQL Server" | "SQLite" | "MongoDB" | "CockroachDB" | "Planetscale" | "MariaDB";
+    DB_DIALECT:
+      | "PostgreSQL"
+      | "MySQL"
+      | "SQL Server"
+      | "SQLite"
+      | "MongoDB"
+      | "CockroachDB"
+      | "Planetscale"
+      | "MariaDB";
+    REDIS_URL: string;
   }
 }

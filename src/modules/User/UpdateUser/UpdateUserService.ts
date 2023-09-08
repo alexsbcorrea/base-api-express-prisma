@@ -1,9 +1,13 @@
 import * as I from "../../../entities/User/DTOs";
 import { IUpdateUserService } from "./InterfaceUpdateUserService";
 import { IUserRepository } from "../../../repositories/UserRepository/Prisma/interfaces";
+import { IRedisCache } from "../../../cache/Redis/InterfaceRedisCache";
 
 export class UpdateUserService implements IUpdateUserService {
-  constructor(private readonly repository: IUserRepository) {}
+  constructor(
+    private readonly repository: IUserRepository,
+    private readonly redis: IRedisCache
+  ) {}
 
   async update(id: I.byID, data: Partial<I.User>): Promise<I.httpResponse> {
     if (!id) {
@@ -86,6 +90,8 @@ export class UpdateUserService implements IUpdateUserService {
           body: "Usuário não encontrado.",
         };
       }
+
+      await this.redis.removeKey("findAllUsers");
 
       return {
         statusCode: 200,
