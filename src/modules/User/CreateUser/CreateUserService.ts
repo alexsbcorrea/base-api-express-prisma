@@ -2,12 +2,12 @@ import * as I from "../../../entities/User/DTOs";
 import { ICreateUserService } from "./InterfaceCreateUserService";
 import { IUserRepository } from "../../../repositories/UserRepository/Prisma/interfaces";
 import { UserEntity } from "../../../entities/User/UserEntity";
-import { IRedisCache } from "../../../cache/Redis/InterfaceRedisCache";
+import { ICache } from "../../../cache/Interface/InterfaceCache";
 
 export class CreateUserService implements ICreateUserService {
   constructor(
     private readonly repository: IUserRepository,
-    private readonly redis: IRedisCache
+    private readonly cache: ICache
   ) {}
 
   async create(data: Partial<I.User>): Promise<I.httpResponse> {
@@ -66,7 +66,7 @@ export class CreateUserService implements ICreateUserService {
     const user = await this.repository.create(finalData);
 
     if (user) {
-      await this.redis.removeKey("findAllUsers");
+      await this.cache.removeKey("findAllUsers");
       return {
         statusCode: 201,
         body: "Usuário cadastrado com sucesso.",

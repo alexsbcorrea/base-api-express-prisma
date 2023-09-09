@@ -1,12 +1,12 @@
 import * as I from "../../../entities/User/DTOs";
 import { IDeleteUserService } from "./InterfaceDeleteUserService";
 import { IUserRepository } from "../../../repositories/UserRepository/Prisma/interfaces";
-import { IRedisCache } from "../../../cache/Redis/InterfaceRedisCache";
+import { ICache } from "../../../cache/Interface/InterfaceCache";
 
 export class DeleteUserService implements IDeleteUserService {
   constructor(
     private readonly repository: IUserRepository,
-    private readonly redis: IRedisCache
+    private readonly cache: ICache
   ) {}
 
   async delete(id: I.byID): Promise<I.httpResponse> {
@@ -25,7 +25,7 @@ export class DeleteUserService implements IDeleteUserService {
       };
     }
 
-    await this.redis.removeKey("findAllUsers");
+    await this.cache.removeKey("findAllUsers");
 
     return {
       statusCode: 200,

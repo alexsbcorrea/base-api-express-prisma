@@ -1,4 +1,4 @@
-export interface IRedisCache {
+export interface ICache {
   setKey(
     key: string,
     value: any,

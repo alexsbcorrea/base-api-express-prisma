@@ -3,17 +3,28 @@ import { FindUserService } from "./FindUserService";
 import { CreateUserController } from "../CreateUser/CreateUserController";
 import { CreateUserService } from "../CreateUser/CreateUserService";
 import { MockUserRepository } from "../../../repositories/UserRepository/Prisma/MockUserRepository";
+import { RedisCache } from "../../../cache/Redis/RedisCache";
+
+const repository = new MockUserRepository();
+const service = new FindUserService(repository);
+const controller = new FindUserController(service);
 
 describe("FindUser-Controller", () => {
   beforeAll(() => {});
 
   test("Deve criar um novo usuário no Banco de Dados", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
-      body: { name: "Alan", email: "alan.mullert@test.com", password: "123456789", confirmPassword: "123456789" },
+      body: {
+        name: "Alan",
+        email: "alan.mullert@test.com",
+        password: "123456789",
+        confirmPassword: "123456789",
+      },
       params: {},
     };
 
@@ -25,10 +36,6 @@ describe("FindUser-Controller", () => {
   });
 
   test("Deve localizar o usuário que acabou de ser criado.", async () => {
-    const repository = new MockUserRepository();
-    const service = new FindUserService(repository);
-    const controller = new FindUserController(service);
-
     const req = {
       body: {},
       params: {
@@ -44,10 +51,6 @@ describe("FindUser-Controller", () => {
   });
 
   test("Deve retornar erro pois o ID está incorreto.", async () => {
-    const repository = new MockUserRepository();
-    const service = new FindUserService(repository);
-    const controller = new FindUserController(service);
-
     const req = {
       body: {},
       params: {

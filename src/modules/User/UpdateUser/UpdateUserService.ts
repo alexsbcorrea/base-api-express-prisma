@@ -1,12 +1,12 @@
 import * as I from "../../../entities/User/DTOs";
 import { IUpdateUserService } from "./InterfaceUpdateUserService";
 import { IUserRepository } from "../../../repositories/UserRepository/Prisma/interfaces";
-import { IRedisCache } from "../../../cache/Redis/InterfaceRedisCache";
+import { ICache } from "../../../cache/Interface/InterfaceCache";
 
 export class UpdateUserService implements IUpdateUserService {
   constructor(
     private readonly repository: IUserRepository,
-    private readonly redis: IRedisCache
+    private readonly cache: ICache
   ) {}
 
   async update(id: I.byID, data: Partial<I.User>): Promise<I.httpResponse> {
@@ -91,12 +91,18 @@ export class UpdateUserService implements IUpdateUserService {
         };
       }
 
-      await this.redis.removeKey("findAllUsers");
-
-      return {
-        statusCode: 200,
-        body: "Usuário atualizado com sucesso.",
-      };
+      try {
+        await this.cache.removeKey("findAllUsers");
+        return {
+          statusCode: 200,
+          body: "Usuário atualizado com sucesso.",
+        };
+      } catch (error) {
+        return {
+          statusCode: 200,
+          body: "Usuário atualizado com sucesso.",
+        };
+      }
     }
   }
 }

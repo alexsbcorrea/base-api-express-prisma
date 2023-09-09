@@ -5,15 +5,15 @@ import { CreateUserService } from "../CreateUser/CreateUserService";
 import { MockUserRepository } from "../../../repositories/UserRepository/Prisma/MockUserRepository";
 import { RedisCache } from "../../../cache/Redis/RedisCache";
 
+const redis = new RedisCache();
+const repository = new MockUserRepository();
+const service = new FindAllUserService(repository, redis);
+const controller = new FindAllUserController(service);
+
 describe("FindAll-User-Service", () => {
   beforeAll(() => {});
 
   test("Retornar uma Lista vazia.", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new FindAllUserService(repository, redis);
-    const controller = new FindAllUserController(service);
-
     const req = {};
 
     const res = {};
@@ -24,8 +24,9 @@ describe("FindAll-User-Service", () => {
   });
 
   test("Deve criar um novo usuário no Banco de Dados", async () => {
+    const redis = new RedisCache();
     const repository = new MockUserRepository();
-    const service = new CreateUserService(repository);
+    const service = new CreateUserService(repository, redis);
     const controller = new CreateUserController(service);
 
     const req = {
@@ -46,11 +47,6 @@ describe("FindAll-User-Service", () => {
   });
 
   test("Retornar uma Lista com 1 Usuário.", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new FindAllUserService(repository, redis);
-    const controller = new FindAllUserController(service);
-
     const req = {};
 
     const res = {};

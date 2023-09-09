@@ -7,6 +7,11 @@ import { FindUserService } from "../FindUser/FindUserService";
 import { MockUserRepository } from "../../../repositories/UserRepository/Prisma/MockUserRepository";
 import { RedisCache } from "../../../cache/Redis/RedisCache";
 
+const redis = new RedisCache();
+const repository = new MockUserRepository();
+const service = new UpdateUserService(repository, redis);
+const controller = new UpdateUserController(service);
+
 describe("Update-User-Controller", () => {
   beforeAll(() => {});
 
@@ -34,11 +39,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve retornar erro, sem dados", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: {},
       params: {
@@ -54,11 +54,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve retornar erro, com dados, porém sem o ID", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: {
         name: "AlanS",
@@ -79,11 +74,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve retornar erro, somente o nome", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: { name: "AlanS" },
       params: {
@@ -99,11 +89,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve retornar erro, somente nome e email", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: { name: "AlanS", email: "alans.mullert@test.com" },
       params: {
@@ -119,11 +104,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve retornar erro, somente nome, email e senha", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: {
         name: "AlanS",
@@ -143,11 +123,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve retornar erro, somente nome, email, senha e confirmação de senha, porém não correspondem.", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: {
         name: "AlanS",
@@ -168,11 +143,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve retornar erro pois o ID está incorreto.", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: {
         name: "AlanS",
@@ -193,11 +163,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve localizar e atualizar o usuário que acabou de ser criado. (Sem alterar a Senha)", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const findService = new FindUserService(repository);
     const findConroller = new FindUserController(findService);
 
@@ -206,7 +171,6 @@ describe("Update-User-Controller", () => {
     const checkUser = await findService.find(userId);
 
     const currentPassword = checkUser.body.password;
-    console.log(currentPassword);
 
     const req = {
       body: {
@@ -228,11 +192,6 @@ describe("Update-User-Controller", () => {
   });
 
   test("Deve localizar e atualizar o usuário que acabou de ser criado.", async () => {
-    const redis = new RedisCache();
-    const repository = new MockUserRepository();
-    const service = new UpdateUserService(repository, redis);
-    const controller = new UpdateUserController(service);
-
     const req = {
       body: {
         name: "Alan S.",

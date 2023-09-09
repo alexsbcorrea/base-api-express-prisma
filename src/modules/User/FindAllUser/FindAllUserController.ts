@@ -5,6 +5,9 @@ import * as I from "../../../entities/User/DTOs";
 export class FindAllUserController implements IFindAllUserController {
   constructor(private readonly service: IFindAllUserService) {}
   async findAll(req: any, res: any): Promise<void> {
+    console.log(req.ip);
+    console.log(req.originalUrl);
+    console.log(req.method);
     const result = await this.service.findAll();
     res.status(result.statusCode).json(result.body);
   }
